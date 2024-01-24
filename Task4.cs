@@ -2,7 +2,27 @@ List<(int, int)> crossroads = new List<(int, int)>();
 
 while (!AtGoal())
 {
+    int availableRoads = PeekAllDirections();
 
+    if (availableRoads > 1)
+    {
+        crossroads.Add(CurrentPosition());
+
+        while (!Peek())
+        {
+            Turn();
+        }
+
+        Move();
+    }
+    else if (availableRoads == 1)
+    {
+        Move();
+    }
+    else
+    {
+        
+    }
 }
 
 #region Basic functions
@@ -55,12 +75,6 @@ bool AtGoal()
 void Paint()
 {
     // Paints the current cell. Making it a wall.
-}
-
-(int, int) CurrentPosition()
-{
-    // Returns the current cell Position.
-    return (0, 0); // Just a placeholder value.
 }
 
 (int, int) CurrentPosition()
