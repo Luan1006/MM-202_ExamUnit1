@@ -40,4 +40,9 @@ bool AtGoal()
     return true; // just a placholder
 }
 
+void Paint()
+{
+    // Paints the current cell. Making it a wall.
+}
+
 #endregion
