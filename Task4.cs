@@ -25,6 +25,26 @@ bool Peek()
     return true; // Just a placeholder value. 
 }
 
+int PeekAllDirections()
+{
+    int counter = 0;
+    int avialableRoads = 0;
+    
+    while (counter < 4)
+    {
+        if (Peek())
+        {
+            // Add the current cell to the list of crossroads.
+            crossroads.Add(CurrentPosition());
+            avialableRoads++;
+        }
+        Turn();
+        counter++;
+    }
+
+    return avialableRoads;
+}
+
 bool AtGoal()
 {
     // Returns true if the current cell is the goal cell.
