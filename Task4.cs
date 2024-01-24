@@ -2,7 +2,7 @@ List<(int, int)> crossroads = new List<(int, int)>();
 
 while (!AtGoal())
 {
-    
+
 }
 
 #region Basic functions
@@ -11,6 +11,7 @@ while (!AtGoal())
 
 void Move()
 {
+    Paint();
     // Moves the car 1 cell in the direction it is heading. 
 }
 
@@ -28,21 +29,21 @@ bool Peek()
 int PeekAllDirections()
 {
     int counter = 0;
-    int avialableRoads = 0;
-    
+    int availableRoads = 0;
+
     while (counter < 4)
     {
         if (Peek())
         {
             // Add the current cell to the list of crossroads.
             crossroads.Add(CurrentPosition());
-            avialableRoads++;
+            availableRoads++;
         }
         Turn();
         counter++;
     }
 
-    return avialableRoads;
+    return availableRoads;
 }
 
 bool AtGoal()
