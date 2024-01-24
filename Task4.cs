@@ -28,13 +28,13 @@ while (!AtGoal())
             crossroads.RemoveAt(crossroads.Count - 1);
             if (crossroads.Count > 0)
             {
-                Teleport(crossroads[crossroads.Count - 1].Item1, crossroads[crossroads.Count - 1].Item2);
+                Teleport(crossroads[crossroads.Count - 1]);
             }
         }
         else
         {
-            Teleport(crossroads[0].Item1, crossroads[0].Item2);
-            crossroads.RemoveAt(0);
+            Teleport(crossroads[crossroads.Count - 1]);
+            crossroads.RemoveAt(crossroads.Count - 1);
             teleported = true;
         }
     }
@@ -98,7 +98,7 @@ void Paint()
     return (0, 0); // Just a placeholder value.
 }
 
-void Teleport(int x, int y)
+void Teleport((int, int) position)
 {
     // Teleports the car to the given position.
 }
