@@ -1,17 +1,19 @@
-﻿// Your program should start at this line.
-/*
-Example:
-Move();
-Move();
-Move();
-Turn();
-Move();
-Move();
-Turn();
-Turn();
-Turn();
-Move();
-*/
+﻿bool finish = false;
+
+while (!finish)
+{
+    if (Peek())
+    {
+        Move();
+        Paint();
+    }
+    else
+    {
+        Turn();
+    }
+
+    finish = AtGoal();
+}
 
 
 #region Basic functions
@@ -38,6 +40,11 @@ bool AtGoal()
 {
     // Returns true if the current cell is the goal cell.
     return true; // just a placholder
+}
+
+void Paint()
+{
+    // Paints the current cell. Making it a wall.
 }
 
 #endregion
