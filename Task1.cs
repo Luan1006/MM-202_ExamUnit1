@@ -1,6 +1,4 @@
-﻿bool finish = false;
-
-while (!finish)
+﻿while (!AtGoal())
 {
     if (Peek())
     {
@@ -11,8 +9,6 @@ while (!finish)
     {
         Turn();
     }
-
-    finish = AtGoal();
 }
 
 
