@@ -1,5 +1,7 @@
 List<(int, int)> crossroads = new List<(int, int)>();
 
+bool teleported = false;
+
 while (!AtGoal())
 {
     int availableRoads = PeekAllDirections();
@@ -21,7 +23,20 @@ while (!AtGoal())
     }
     else
     {
-        
+        if (teleported)
+        {
+            crossroads.RemoveAt(crossroads.Count - 1);
+            if (crossroads.Count > 0)
+            {
+                Teleport(crossroads[crossroads.Count - 1].Item1, crossroads[crossroads.Count - 1].Item2);
+            }
+        }
+        else
+        {
+            Teleport(crossroads[0].Item1, crossroads[0].Item2);
+            crossroads.RemoveAt(0);
+            teleported = true;
+        }
     }
 }
 
