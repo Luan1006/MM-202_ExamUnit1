@@ -83,4 +83,9 @@ void Paint()
     return (0, 0); // Just a placeholder value.
 }
 
+void Teleport(int x, int y)
+{
+    // Teleports the car to the given position.
+}
+
 #endregion
