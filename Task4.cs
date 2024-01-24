@@ -1,5 +1,10 @@
 List<(int, int)> crossroads = new List<(int, int)>();
 
+while (!AtGoal())
+{
+    
+}
+
 #region Basic functions
 // These functions are just her to make your intelisense work. 
 // They only have a conceptual function.
