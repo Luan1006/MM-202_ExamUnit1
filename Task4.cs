@@ -1,18 +1,4 @@
-// Your program should start at this line.
-/*
-Example:
-Move();
-Move();
-Move();
-Turn();
-Move();
-Move();
-Turn();
-Turn();
-Turn();
-Move();
-*/
-
+List<(int, int)> crossroads = new List<(int, int)>();
 
 #region Basic functions
 // These functions are just her to make your intelisense work. 
@@ -43,6 +29,17 @@ bool AtGoal()
 void Paint()
 {
     // Paints the current cell. Making it a wall.
+}
+
+(int, int) CurrentPosition()
+{
+    // Returns the current cell Position.
+    return (0, 0); // Just a placeholder value.
+}
+
+void Remember(int x, int y)
+{
+    // Remembers the current cell Position.
 }
 
 #endregion
