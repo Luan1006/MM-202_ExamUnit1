@@ -42,20 +42,10 @@ void Paint()
     return (0, 0); // Just a placeholder value.
 }
 
-void Remember(int x, int y)
-{
-    // Remembers the current cell Position.
-}
-
 (int, int) CurrentPosition()
 {
     // Returns the current cell Position.
     return (0, 0); // Just a placeholder value.
-}
-
-void Remember(int x, int y)
-{
-    // Remembers the current cell Position.
 }
 
 #endregion
