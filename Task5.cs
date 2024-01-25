@@ -1,4 +1,17 @@
+while (!AtGoal())
+{
+    if (Peek())
+    {
+        Move();
+        Paint();
+    }
+    else
+    {
+        Turn();
+    }
 
+    PeekAllDirections();
+}
 
 #region Basic functions
 // These functions are just her to make your intelisense work. 
