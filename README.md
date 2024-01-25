@@ -6,4 +6,5 @@ The task was to make a pseudo-esque code to find the end of a labyrinth given fo
 2. Turn
 3. Peek
 4. AtGoal
+
 And the possibility to add extra methods.
