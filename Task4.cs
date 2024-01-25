@@ -60,6 +60,17 @@ bool Peek()
     return true; // Just a placeholder value. 
 }
 
+
+bool AtGoal()
+{
+    // Returns true if the current cell is the goal cell.
+    return true; // just a placholder
+}
+
+#endregion
+
+#region Created functions
+
 int PeekAllDirections()
 {
     int turnCount = 0;
@@ -78,12 +89,6 @@ int PeekAllDirections()
     }
 
     return availableRoads;
-}
-
-bool AtGoal()
-{
-    // Returns true if the current cell is the goal cell.
-    return true; // just a placholder
 }
 
 void Paint()

@@ -38,6 +38,11 @@ bool AtGoal()
     return true; // just a placholder
 }
 
+#endregion
+
+
+#region Created functions
+
 void Paint()
 {
     // Paints the current cell. Making it a wall.

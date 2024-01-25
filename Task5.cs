@@ -33,6 +33,10 @@ bool Peek()
     return true; // Just a placeholder value. 
 }
 
+#endregion
+
+#region Created functions
+
 void PeekAllDirections()
 {
     int turnCount = 0;
