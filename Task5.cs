@@ -34,6 +34,12 @@ bool Peek()
     return true; // Just a placeholder value. 
 }
 
+bool IsGoal()
+{
+    // Returns true if the cell ahead is the goal cell.
+    return true; // Just a placeholder value.
+}
+
 bool AtGoal()
 {
     // Returns true if the current cell is the goal cell.
