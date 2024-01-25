@@ -34,3 +34,7 @@ I then decided to make the car backtrack if we were in a crossroad. Meaning that
 The while-loop is then constructed to check how many available roads we have. If you have more than 1 add the current position to the crossroads list then move to any available directions. Then if the amount of availble roads is 1 we can move to that road and go. Lastly if there are no ways to go we can "teleport" (backtrack) to the previous crossroad and remove that position from the crossroads list. And then repeat it all over again.
 
 I have added some tweaks to take care of some cases such as if you teleport to a crossroad and there is nowhere to go, delete that position from the crossroads list and teleport to the newest position. We also set that teleported is false whenever we dont teleport.
+
+## Task5
+
+Task5 was interesting as there are many open spaces that are connected to eachother. I found out that if we paint each cell and go counter clockwise on each dead end you get very close to the goal but never into it. I then created a method that checks on each square if they can find the exit and then go to that exit.
