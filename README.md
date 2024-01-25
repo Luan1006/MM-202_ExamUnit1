@@ -25,7 +25,7 @@ For task 3 I used the same solution as task 1.
 
 ## Task4
 
-This one was a bit tricky. For this I wanted to implement some sort of pathfinding algorihtm. However, unless I create a car duplicator, many of the algorithms don't really make any sense. I then started to think about how to complete the task.
+This one was a bit tricky. For this I wanted to implement some sort of pathfinding algorithm. However, unless I create a car duplicator, many of the algorithms don't really make any sense. I then started to think about how to complete the task.
 
 If we use the while-loops from Task1 and Task3. We first go straight and hit a dead end, we then turn forever as the start is now painted. This means we would need some sort of backtracking feature.
 
@@ -34,6 +34,8 @@ I then decided to make the car backtrack if we were in a crossroad. Meaning that
 The while-loop is then constructed to check how many available roads we have. If you have more than 1 add the current position to the crossroads list then move to any available directions. Then if the amount of availble roads is 1 we can move to that road and go. Lastly if there are no ways to go we can "teleport" (backtrack) to the previous crossroad and remove that position from the crossroads list. And then repeat it all over again.
 
 I have added some tweaks to take care of some cases such as if you teleport to a crossroad and there is nowhere to go, delete that position from the crossroads list and teleport to the newest position. We also set that teleported is false whenever we dont teleport.
+
+In the end it was somewhat of a Depth-first search (DFS) algorithm. The algorithm always works, but can give unoptimal solutions. For this map and the restriciton I took I believe it was a sufficient way to solve it.
 
 ## Task5
 
