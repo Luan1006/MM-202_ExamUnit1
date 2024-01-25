@@ -68,10 +68,10 @@ bool Peek()
 
 int PeekAllDirections()
 {
-    int counter = 0;
+    int turnCount = 0;
     int availableRoads = 0;
 
-    while (counter < 4)
+    while (turnCount < 4)
     {
         if (Peek())
         {
@@ -80,7 +80,7 @@ int PeekAllDirections()
             availableRoads++;
         }
         Turn();
-        counter++;
+        turnCount++;
     }
 
     return availableRoads;
