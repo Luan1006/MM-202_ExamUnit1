@@ -1,8 +1,3 @@
-/*
-This is essentially a DFS algorithm. The algorithm is not very efficient, but it works for the given map.
-My reasoning is that we can not duplicate the car, so we have to keep track of the crossroads we have visited.
-*/
-
 List<(int, int)> crossroads = new List<(int, int)>();
 
 bool teleported = false;
@@ -16,10 +11,14 @@ while (!AtGoal())
         crossroads.Add(CurrentPosition());
 
         MoveAvailableDirection();
+
+        teleported = false;
     }
     else if (availableRoads == 1)
     {
         MoveAvailableDirection();
+
+        teleported = false;
     }
     else
     {

@@ -28,3 +28,5 @@ This one was a bit tricky. For this I wanted to implement some sort of pathfindi
 If we use the while-loops from Task1 and Task3. We first go straight and hit a dead end, we then turn forever as the start is now painted. This means we would need some sort of backtracking feature.
 
 I then decided to make the car backtrack if we were in a crossroad. Meaning that for each position the car is at we look at all directions. I then created a method that returns the current position in X and Y coordinates and a list to store the coordinates to these crossroads. My thought was to treat this list as a stack and each time we backtrack we pop the stack. This will make it impossible to not find the solution (unless its an impossible labyrinth) however the solution it finds might not be the most optimal one.
+
+The while-loop is then constructed to be 
