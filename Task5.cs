@@ -34,6 +34,23 @@ bool Peek()
     return true; // Just a placeholder value. 
 }
 
+void PeekAllDirections()
+{
+    int turnCount = 0;
+
+    while (turnCount < 4)
+    {
+        if (IsGoal())
+        {
+            Move();
+        }
+
+        Turn();
+
+        turnCount++;
+    }
+}
+
 bool IsGoal()
 {
     // Returns true if the cell ahead is the goal cell.
