@@ -1,17 +1,3 @@
-// Your program should start at this line.
-/*
-Example:
-Move();
-Move();
-Move();
-Turn();
-Move();
-Move();
-Turn();
-Turn();
-Turn();
-Move();
-*/
 
 
 #region Basic functions
@@ -25,7 +11,7 @@ void Move()
 
 void Turn()
 {
-    // Turns the car 90 deg clockwise.
+    // Turns the car 90 deg counter clockwise.
 }
 
 bool Peek()
