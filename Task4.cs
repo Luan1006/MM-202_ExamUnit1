@@ -15,16 +15,11 @@ while (!AtGoal())
     {
         crossroads.Add(CurrentPosition());
 
-        while (!Peek())
-        {
-            Turn();
-        }
-
-        Move();
+        MoveAvailableDirection();
     }
     else if (availableRoads == 1)
     {
-        Move();
+        MoveAvailableDirection();
     }
     else
     {
@@ -106,6 +101,16 @@ void Paint()
 void Teleport((int, int) position)
 {
     // Teleports the car to the given position.
+}
+
+void MoveAvailableDirection()
+{
+    while (!Peek())
+    {
+        Turn();
+    }
+
+    Move();
 }
 
 #endregion
