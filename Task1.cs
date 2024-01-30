@@ -3,7 +3,6 @@
     if (Peek())
     {
         Move();
-        Paint();
     }
     else
     {
@@ -43,9 +42,6 @@ bool AtGoal()
 
 #region Created functions
 
-void Paint()
-{
-    // Paints the current cell. Making it a wall.
-}
+
 
 #endregion
