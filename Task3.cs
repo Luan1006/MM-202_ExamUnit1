@@ -9,7 +9,7 @@ while (!AtGoal())
         continue;
     }
 
-    TurnBasedOnCounter(turnNumber);
+    TurnBasedOnCurrentTurn(turnNumber);
     counter++;
 
     if (counter == 2)
@@ -58,16 +58,37 @@ void TurnLeft()
     }
 }
 
-void TurnBasedOnCounter(int turnNumber)
+void TurnBasedOnCurrentTurn(int turnNumber)
 {
-    if (turnNumber % 2 != 0)
+    if (turnNumber <= 4)
     {
-        Turn();
+        if (turnNumber % 2 != 0)
+        {
+            Turn();
+            Move();
+            Turn();
+        }
+        else
+        {
+            TurnLeft();
+            Move();
+            TurnLeft();
+        }
     }
     else
     {
-        TurnLeft();
+        if (turnNumber % 2 != 0)
+        {
+            TurnLeft();
+            Move();
+            Turn();
+        }
+        else
+        {
+            Turn();
+            Move();
+            TurnLeft();
+        }
     }
 }
-
 #endregion
