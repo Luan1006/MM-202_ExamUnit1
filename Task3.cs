@@ -1,15 +1,23 @@
+int turnNumber = 1;
+int counter = 0;
+
 while (!AtGoal())
 {
     if (Peek())
     {
         Move();
+        continue;
     }
-    else
+
+    TurnBasedOnCounter(turnNumber);
+    counter++;
+
+    if (counter == 2)
     {
-        Turn();
+        counter = 0;
+        turnNumber++;
     }
 }
-
 
 #region Basic functions
 // These functions are just her to make your intelisense work. 
@@ -47,6 +55,18 @@ void TurnLeft()
     for (int i = 0; i < 4; i++)
     {
         Turn();
+    }
+}
+
+void TurnBasedOnCounter(int turnNumber)
+{
+    if (turnNumber % 2 != 0)
+    {
+        Turn();
+    }
+    else
+    {
+        TurnLeft();
     }
 }
 
