@@ -1,3 +1,17 @@
+int[,] map = new int[42, 32];
+
+map[40, 30] = 1; 
+
+enum Directions
+{
+    West,
+    North,
+    East,
+    South
+}
+
+int curentDirection = 0;
+
 List<(int, int)> crossroads = new List<(int, int)>();
 
 bool teleported = false;
@@ -70,6 +84,43 @@ bool AtGoal()
 
 #region Created functions
 
+void MoveOnArray()
+{
+    var (currentX, currentY) = CurrentPosition();
+    map[currentX, currentY] = 2;
+
+    switch (curentDirection)
+    {
+        case (int)Directions.North:
+            currentX--;
+            break;
+        case (int)Directions.East:
+            currentY++;
+            break;
+        case (int)Directions.South:
+            currentX++;
+            break;
+        case (int)Directions.West:
+            currentY--;
+            break;
+    }
+
+    map[currentX, currentY] = 1;
+}
+
+void TurnAndChangeDirection()
+{
+    Turn();
+    if (curentDirection == 3)
+    {
+        curentDirection = 0;
+    }
+    else
+    {
+        curentDirection++;
+    }
+}
+
 int PeekAllDirections()
 {
     int turnCount = 0;
@@ -83,37 +134,47 @@ int PeekAllDirections()
             crossroads.Add(CurrentPosition());
             availableRoads++;
         }
-        Turn();
+        TurnAndChangeDirection();
         turnCount++;
     }
 
     return availableRoads;
 }
 
-void Paint()
-{
-    // Paints the current cell. Making it a wall.
-}
 
 (int, int) CurrentPosition()
 {
-    // Returns the current cell Position.
-    return (0, 0); // Just a placeholder value.
+    for (int i = 0; i < map.GetLength(0); i++)
+    {
+        for (int j = 0; j < map.GetLength(1); j++)
+        {
+            if (map[i, j] == 1)
+            {
+                return (i, j);
+            }
+        }
+    }
+
+    return (-1, -1); // Return an invalid position if the current position is not found
 }
 
 void Teleport((int, int) position)
 {
-    // Teleports the car to the given position.
+    var (currentX, currentY) = CurrentPosition();
+    map[currentX, currentY] = 0;
+
+    var (newX, newY) = position;
+    map[newX, newY] = 1;
 }
 
 void MoveAvailableDirection()
 {
     while (!Peek())
     {
-        Turn();
+        TurnAndChangeDirection();
     }
 
-    Paint();
+    MoveOnArray();
     Move();
 }
 
