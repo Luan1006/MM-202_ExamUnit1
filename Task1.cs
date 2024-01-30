@@ -1,4 +1,6 @@
-﻿while (!AtGoal())
+﻿int turnNumber = 1;
+
+while (!AtGoal())
 {
     if (Peek())
     {
@@ -6,7 +8,24 @@
     }
     else
     {
-        Turn();
+        int counter = 0;
+
+        if (turnNumber % 2 != 0 && counter < 2)
+        {
+            Turn();
+            counter++;
+        }
+        else if (turnNumber % 2 == 0 && counter < 2)
+        {
+            TurnLeft();
+            counter++;
+        }
+
+        if (counter == 2)
+        {
+            counter = 0;
+            turnNumber++;
+        }
     }
 }
 
@@ -42,6 +61,12 @@ bool AtGoal()
 
 #region Created functions
 
-
+void TurnLeft()
+{
+    for (int i = 0; i < 4; i++)
+    {
+        Turn();
+    }
+}
 
 #endregion
