@@ -45,7 +45,6 @@ while (!AtGoal())
 
 void Move()
 {
-    Paint();
     // Moves the car 1 cell in the direction it is heading. 
 }
 
@@ -114,6 +113,7 @@ void MoveAvailableDirection()
         Turn();
     }
 
+    Paint();
     Move();
 }
 
