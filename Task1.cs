@@ -9,14 +9,7 @@ while (!AtGoal())
         continue;
     }
 
-    if (turnNumber % 2 != 0)
-    {
-        Turn();
-    }
-    else
-    {
-        TurnLeft();
-    }
+    TurnBasedOnCounter(turnNumber);
     counter++;
 
     if (counter == 2)
@@ -62,6 +55,18 @@ void TurnLeft()
     for (int i = 0; i < 4; i++)
     {
         Turn();
+    }
+}
+
+void TurnBasedOnCounter(int turnNumber)
+{
+    if (turnNumber % 2 != 0)
+    {
+        Turn();
+    }
+    else
+    {
+        TurnLeft();
     }
 }
 
