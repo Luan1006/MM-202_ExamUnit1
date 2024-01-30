@@ -3,7 +3,6 @@ while (!AtGoal())
     if (Peek())
     {
         Move();
-        Paint();
     }
     else
     {
@@ -43,9 +42,12 @@ bool AtGoal()
 
 #region Created functions
 
-void Paint()
+void TurnLeft()
 {
-    // Paints the current cell. Making it a wall.
+    for (int i = 0; i < 4; i++)
+    {
+        Turn();
+    }
 }
 
 #endregion
