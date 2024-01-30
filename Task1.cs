@@ -1,34 +1,30 @@
 ﻿int turnNumber = 1;
+int counter = 0;
 
 while (!AtGoal())
 {
     if (Peek())
     {
         Move();
+        continue;
+    }
+
+    if (turnNumber % 2 != 0)
+    {
+        Turn();
     }
     else
     {
-        int counter = 0;
+        TurnLeft();
+    }
+    counter++;
 
-        if (turnNumber % 2 != 0 && counter < 2)
-        {
-            Turn();
-            counter++;
-        }
-        else if (turnNumber % 2 == 0 && counter < 2)
-        {
-            TurnLeft();
-            counter++;
-        }
-
-        if (counter == 2)
-        {
-            counter = 0;
-            turnNumber++;
-        }
+    if (counter == 2)
+    {
+        counter = 0;
+        turnNumber++;
     }
 }
-
 
 #region Basic functions
 // These functions are just her to make your intelisense work. 
