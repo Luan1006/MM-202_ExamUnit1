@@ -1,6 +1,6 @@
 int[,] map = new int[42, 32];
 
-map[40, 30] = 1; 
+map[40, 30] = 1;
 
 enum Directions
 {
@@ -108,6 +108,33 @@ void MoveOnArray()
     map[currentX, currentY] = 1;
 }
 
+bool CheckForOpenCell()
+{
+    var (currentX, currentY) = CurrentPosition();
+    switch (curentDirection)
+    {
+        case (int)Directions.North:
+            currentX--;
+            break;
+        case (int)Directions.East:
+            currentY++;
+            break;
+        case (int)Directions.South:
+            currentX++;
+            break;
+        case (int)Directions.West:
+            currentY--;
+            break;
+    }
+
+    if (map[currentX, currentY] == 2)
+    {
+        return false;
+    }
+
+    return Peek();
+}
+
 void TurnAndChangeDirection()
 {
     Turn();
@@ -128,7 +155,7 @@ int PeekAllDirections()
 
     while (turnCount < 4)
     {
-        if (Peek())
+        if (CheckForOpenCell())
         {
             // Add the current cell to the list of crossroads.
             crossroads.Add(CurrentPosition());
@@ -169,7 +196,7 @@ void Teleport((int, int) position)
 
 void MoveAvailableDirection()
 {
-    while (!Peek())
+    while (!CheckForOpenCell())
     {
         TurnAndChangeDirection();
     }
