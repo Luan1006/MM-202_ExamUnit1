@@ -1,10 +1,14 @@
 while (!AtGoal())
 {
-    if(Peek())
+    TurnCounterClockwise();
+    if (Peek())
     {
-        TurnCounterClockwise();
-
-        if (Peek())
+        Move();
+    }
+    else
+    {
+        Turn();
+        if(Peek())
         {
             Move();
         }
@@ -13,11 +17,6 @@ while (!AtGoal())
             Turn();
             Move();
         }
-    }
-    else
-    {
-        Turn();
-        Move();
     }
 }
 
