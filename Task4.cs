@@ -188,7 +188,7 @@ int PeekAllDirections()
 void Teleport((int, int) position)
 {
     var (currentX, currentY) = CurrentPosition();
-    map[currentX, currentY] = 0;
+    map[currentX, currentY] = 2;
 
     var (newX, newY) = position;
     map[newX, newY] = 1;
