@@ -39,4 +39,6 @@ In the end it was somewhat of a Depth-first search (DFS) algorithm. The algorith
 
 ## Task5
 
-Task5 was interesting as there are many open spaces that are connected to eachother. I found out that if we paint each cell and go counter clockwise on each dead end you get very close to the goal but never into it. I then created a method that checks on each square if they can find the exit and then go to that exit.
+Task5 was interesting as there are many open spaces that are connected to eachother. In my first itteration I found out that if we paint each cell and go counter clockwise on each dead end you get very close to the goal but never into it. I then created a method that checks on each square if they can find the exit and then go to that exit.
+
+After learning about other restrictions I had to change my way of thinking of this. What I found was that we can just hug the left wall all the way to the finish line. We do that by looking left, then if its open go that way. Else we turn to the same position and if that is open we go, and then lastly if that does not work either we just turn one more time and go. No need to check one more time as it will solve this map just fine without having to peek again in case of a dead end.
