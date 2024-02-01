@@ -1,6 +1,6 @@
 while (!AtGoal())
 {
-    
+
 }
 
 #region Basic functions
@@ -27,6 +27,18 @@ bool AtGoal()
 {
     // Returns true if the current cell is the goal cell.
     return true; // just a placholder
+}
+
+#endregion
+
+#region Created Functions
+
+void TurnCounterClockwise()
+{
+    for (int i = 0; i < 4; i++)
+    {
+        Turn();
+    }
 }
 
 #endregion
