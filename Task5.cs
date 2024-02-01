@@ -1,6 +1,24 @@
 while (!AtGoal())
 {
+    if(Peek())
+    {
+        TurnCounterClockwise();
 
+        if (Peek())
+        {
+            Move();
+        }
+        else
+        {
+            Turn();
+            Move();
+        }
+    }
+    else
+    {
+        Turn();
+        Move();
+    }
 }
 
 #region Basic functions
