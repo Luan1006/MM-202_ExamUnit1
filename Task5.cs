@@ -1,16 +1,6 @@
 while (!AtGoal())
 {
-    if (Peek())
-    {
-        Move();
-        Paint();
-    }
-    else
-    {
-        Turn();
-    }
-
-    PeekAllDirections();
+    
 }
 
 #region Basic functions
@@ -33,42 +23,10 @@ bool Peek()
     return true; // Just a placeholder value. 
 }
 
-#endregion
-
-#region Created functions
-
-void PeekAllDirections()
-{
-    int turnCount = 0;
-
-    while (turnCount < 4)
-    {
-        if (IsGoal())
-        {
-            Move();
-        }
-
-        Turn();
-
-        turnCount++;
-    }
-}
-
-bool IsGoal()
-{
-    // Returns true if the cell ahead is the goal cell.
-    return true; // Just a placeholder value.
-}
-
 bool AtGoal()
 {
     // Returns true if the current cell is the goal cell.
     return true; // just a placholder
-}
-
-void Paint()
-{
-    // Paints the current cell. Making it a wall.
 }
 
 #endregion
